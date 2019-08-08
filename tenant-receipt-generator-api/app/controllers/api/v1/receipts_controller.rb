@@ -8,7 +8,7 @@ class Api::V1::ReceiptsController < ApplicationController
   end
 
   def create
-    receipt = Receipt.new(receipt_params)
+    receipt = @user.receipts.new(receipt_params)
     if receipt.save
       render json: receipt
     else
