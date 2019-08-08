@@ -7,6 +7,8 @@ class Home extends Component {
 
 // functional components add a navbar in component
 
+
+
   render() {
     return(
 
