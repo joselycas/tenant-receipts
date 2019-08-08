@@ -68,7 +68,7 @@ class Receipt extends Component {
             <td>
             <label>From Date: </label>
             <input type="integer" name="from-date" value={this.state.from_date} onChange={this.handleOnChange}/>
-            </td> <br />
+            </td> 
             <td>
             <label>End Date: </label>
             <input type="integer" name="end-date"value={this.state.to_date} onChange={this.handleOnChange} />

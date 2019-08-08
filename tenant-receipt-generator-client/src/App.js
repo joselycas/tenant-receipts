@@ -8,11 +8,11 @@ class App extends Component {
   //   super()
   // }
 
-  componentDidMount() {
-    fetch("http://localhost:3000/api/v1/users/1")
-    .then(res => res.json())
-    .then(user => console.log(user))
-  }
+  // componentDidMount() {
+  //   fetch("http://localhost:3000/api/v1/users/1")
+  //   .then(res => res.json())
+  //   .then(user => console.log(user))
+  // }
 
 
   render(){
