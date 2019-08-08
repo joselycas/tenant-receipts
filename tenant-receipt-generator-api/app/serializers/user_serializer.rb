@@ -1,3 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :street, :city, :state, :zip
+  has_many :receipts
 end
