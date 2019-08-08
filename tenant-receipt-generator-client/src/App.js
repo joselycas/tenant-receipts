@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './containers/Home.js';
+import UserContainer from './containers/UserContainer'
+
 
 class App extends Component {
 
@@ -9,9 +11,7 @@ class App extends Component {
   // }
 
   // componentDidMount() {
-  //   fetch("http://localhost:3000/api/v1/users/1")
-  //   .then(res => res.json())
-  //   .then(user => console.log(user))
+  //   this.props.fetchUsers()
   // }
 
 
@@ -19,7 +19,9 @@ class App extends Component {
   return (
     <div className="App">
     <header className="Header">Welcome To The Receipt Generator For Rent Payments</header>
-      <h1> <Home /> </h1>
+
+      <UserContainer />
+
     </div>
   );
   }
