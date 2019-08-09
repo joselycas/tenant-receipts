@@ -4,14 +4,14 @@ import {addUser} from '../actions/addUser'
 import {connect} from 'react-redux'
 
 // this is supposed to be a functional component in the component folder.
-class User extends Component {
+class UserInput extends Component {
 
 state = {
   name: '',
   street: '',
   city: '',
   state: '',
-  zip: null
+  zip: 0
 }
 
 handleOnChange = event => {
@@ -22,6 +22,13 @@ handleOnChange = event => {
 handleonSubmit = event => {
   event.preventDefault()
   this.props.addUser(this.state)
+  this.setState({
+    name: '',
+    street: '',
+    city: '',
+    state: '',
+    zip: null
+  })
 }
 
 
@@ -50,4 +57,4 @@ handleonSubmit = event => {
   }
 }
 
-export default connect(null, {addUser})(User);
+export default connect(null, {addUser})(UserInput);

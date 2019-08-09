@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './containers/Home.js';
-import UserContainer from './containers/UserContainer'
+// import UserContainer from './containers/UserContainer'
 
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
     <div className="App">
     <header className="Header">Welcome To The Receipt Generator For Rent Payments</header>
 
-      <UserContainer />
+      <Home />
 
     </div>
   );

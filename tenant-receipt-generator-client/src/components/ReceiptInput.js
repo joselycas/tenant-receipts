@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import {addReceipt} from '../actions/addReceipt'
+import {connect} from 'react-redux'
 
-// this is supposed to be a functional component in the component folder.
 
-
-class Receipt extends Component {
+class ReceiptInput extends Component {
 
   constructor() {
     super()
@@ -25,9 +25,6 @@ class Receipt extends Component {
 
   }
 
-  submitForm = () => {
-    console.log("form submitted")
-  }
 
   handleOnChange = event => {
     const {name, value} = event.target
@@ -38,8 +35,21 @@ class Receipt extends Component {
 
   handleonSubmit = event => {
     event.preventDefault()
-    this.submitForm()
-
+    this.props.addReceipt(this.state)
+    this.setState({
+      receipt:{
+        name: "",
+        street: "",
+        apartment: "",
+        city: "",
+        state: "",
+        zip: "",
+        from_date: "/ /",
+        to_date: "/ /",
+        amount: 0,
+        notes: ""
+      }
+    })
   }
 
 // this will have handleOnChange and handleonSubmit methods
@@ -50,7 +60,7 @@ class Receipt extends Component {
     return(
       <div>
       <h2>Please enter tenant's information</h2>
-      <form>
+      <form onSubmit={this.handleonSubmit}>
         <label>Name: </label>
         <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} /><br />
         <label>Street Address: </label>
@@ -68,7 +78,7 @@ class Receipt extends Component {
             <td>
             <label>From Date: </label>
             <input type="integer" name="from-date" value={this.state.from_date} onChange={this.handleOnChange}/>
-            </td> 
+            </td>
             <td>
             <label>End Date: </label>
             <input type="integer" name="end-date"value={this.state.to_date} onChange={this.handleOnChange} />
@@ -87,4 +97,4 @@ class Receipt extends Component {
   }
 }
 
-export default Receipt;
+export default connect(null, {addReceipt})(ReceiptInput );

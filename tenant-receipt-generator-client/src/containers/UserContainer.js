@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import UserInput from '../components/userInput'
-import Users from '../components/users'
+import UserInput from '../components/UserInput'
+import Users from '../components/Users'
 import {connect} from 'react-redux'
 import {fetchUsers} from '../actions/fetchUsers'
 

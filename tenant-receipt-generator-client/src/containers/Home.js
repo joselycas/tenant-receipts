@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Receipt from './Receipt'
-import User from './User'
+import ReceiptContainer from './ReceiptContainer'
+import UserContainer from './UserContainer'
 import Review from './Review'
 
 class Home extends Component {
@@ -13,8 +13,8 @@ class Home extends Component {
     return(
 
       <div>
-        <User />
-        <Receipt />
+        <UserContainer />
+        <ReceiptContainer />
         <Review />
       </div>
 
