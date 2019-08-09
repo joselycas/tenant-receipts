@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import UserInput from '../components/UserInput'
 import Users from '../components/Users'
+import User from '../components/User'
 import {connect} from 'react-redux'
 import {fetchUsers} from '../actions/fetchUsers'
+import {Route} from 'react-router-dom'
 
 class UserContainer extends Component {
 
@@ -14,8 +16,11 @@ class UserContainer extends Component {
     return(
 
       <div>
-        <Users users={this.props.users}/>
-        <UserInput/>
+        <Route path='/users/new' component={UserInput}/>
+        <Route path='/users/:id' render={(routerProps) => <User {...routerProps} users={this.props.users}/>} />
+        <Route exact path='/users' render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
+
+
       </div>
 
 
