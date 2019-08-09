@@ -6,14 +6,6 @@ import UserContainer from './containers/UserContainer'
 
 class App extends Component {
 
-  // constructor() {
-  //   super()
-  // }
-
-  // componentDidMount() {
-  //   this.props.fetchUsers()
-  // }
-
 
   render(){
   return (
