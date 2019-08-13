@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import {addUser} from '../actions/addUser'
 import {connect} from 'react-redux'
+import User from '../components/User'
 
 // this is supposed to be a functional component in the component folder.
 class UserInput extends Component {
@@ -27,7 +28,7 @@ handleonSubmit = event => {
     street: '',
     city: '',
     state: '',
-    zip: null
+    zip: 0
   })
 }
 
@@ -50,7 +51,14 @@ handleonSubmit = event => {
           <input type="text" name="zip" value={this.state.zip} onChange={this.handleOnChange} /><br />
           <input type="submit" />
         </form>
+        <div>
+        User input should go here
+
+        <User />
+
+        </div>
       </div>
+
 
 
     )

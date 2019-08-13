@@ -1,7 +1,7 @@
-export function addReceipt(data) {
-
+export function addReceipt(data, user_id) {
+console.log(user_id)
   return (dispatch) => {
-  fetch('http://localhost:3000/api/v1/receipts', {
+  fetch(`http://localhost:3000/api/v1/users/${user_id}/receipts`, {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'

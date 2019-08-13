@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import ReceiptInput from '../components/ReceiptInput'
 import Receipts from '../components/Receipts'
-// import {connect} from 'react-redux'
-// import {fetchUsers} from '../actions/fetchUsers'
+import User from '../components/User.js'
+import {Route} from 'react-router-dom'
+
+import {connect} from 'react-redux'
+import {addReceipt} from '../actions/addReceipt'
 
 class ReceiptContainer extends Component {
   //
@@ -14,8 +17,7 @@ class ReceiptContainer extends Component {
     return(
 
       <div>
-      
-        <ReceiptInput />
+      <Route path='/users/:id/receipts/new' component={ReceiptInput}/>
       </div>
 
 
@@ -23,10 +25,10 @@ class ReceiptContainer extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     users: state.users
-//   }
-// }
-export default ReceiptContainer
-// export default connect(mapStateToProps, {fetchUsers})(ReceiptContainer);
+const mapStateToProps = state => {
+  return {
+    receipts: state.receipts
+  }
+}
+
+export default connect(mapStateToProps, {addReceipt})(ReceiptContainer);

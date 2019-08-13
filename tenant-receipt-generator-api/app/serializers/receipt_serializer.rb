@@ -1,3 +1,3 @@
 class ReceiptSerializer < ActiveModel::Serializer
-  attributes :id, :name, :street, :apartment, :city, :state, :zip, :from_date, :to_date, :amount, :notes
+  attributes :id, :name, :street, :apartment, :city, :state, :zip, :from_date, :to_date, :amount, :notes, :user_id
 end

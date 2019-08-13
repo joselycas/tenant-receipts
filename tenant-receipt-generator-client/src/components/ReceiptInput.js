@@ -18,10 +18,11 @@ class ReceiptInput extends Component {
         from_date: "/ /",
         to_date: "/ /",
         amount: 0,
-        notes: ""
+        notes: "",
+        user_id: ""
       }
     }
-
+ // componentDidMount set userid to props being passed in to user
 
   }
 
@@ -52,9 +53,6 @@ class ReceiptInput extends Component {
     })
   }
 
-// this will have handleOnChange and handleonSubmit methods
-// will inherent action props from Home
-// will pass down the action to the connect method
 
   render() {
     return(
@@ -97,4 +95,4 @@ class ReceiptInput extends Component {
   }
 }
 
-export default connect(null, {addReceipt})(ReceiptInput );
+export default connect(null, {addReceipt})(ReceiptInput);
