@@ -1,6 +1,6 @@
 class Api::V1::ReceiptsController < ApplicationController
 
-  before_action :set_user
+  # before_action :set_user
 
   def index
     receipts = @user.receipts
@@ -36,7 +36,7 @@ class Api::V1::ReceiptsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
 end
