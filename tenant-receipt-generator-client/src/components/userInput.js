@@ -52,9 +52,7 @@ handleonSubmit = event => {
           <input type="submit" />
         </form>
         <div>
-        User input should go here
 
-        <User />
 
         </div>
       </div>

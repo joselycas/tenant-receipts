@@ -8,7 +8,6 @@ class Home extends Component {
 
 
 
-
   render() {
     return(
       <div>
@@ -22,7 +21,8 @@ class Home extends Component {
       </ul>
       <h1>No more paper receipts. Update the date and instantly send a receipt to your tenants. </h1>
       <p><Link to="/users/new">Get started by creating a profile.</Link> </p>  <br />
-      <UserContainer />
+      <p>Already have a profile? Generate a receipt. </p>
+
       </div>
 
 
