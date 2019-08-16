@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './containers/Home.js';
-import UserContainer from './containers/UserContainer'
-
+import NavBar from './components/NavBar'
 
 
 
@@ -12,10 +11,13 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-    <header className="Header">Welcome To The Receipt Generator For Rent Payments</header>
+    <header className="Header">Say goodbye to paper receipts.</header>
 
+      <NavBar /> <br />
       <Home />
-      <UserContainer />
+
+
+
     </div>
   );
   }

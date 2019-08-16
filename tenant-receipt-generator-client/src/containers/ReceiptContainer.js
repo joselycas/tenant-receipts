@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReceiptInput from '../components/ReceiptInput'
 import Receipts from '../components/Receipts'
-import User from '../components/User.js'
+import Review from '../components/Review'
+import {Route} from 'react-router'
 
 
 class ReceiptContainer extends Component {
@@ -10,9 +11,12 @@ class ReceiptContainer extends Component {
     return(
 
       <div>
-      This is the receipt container
-    <ReceiptInput user={this.props.user && this.props.user.id} />
-    <Receipts receipts={this.props.user && this.props.user.receipts} />
+
+      <ReceiptInput user={this.props.user && this.props.user.id} /><br/><br />
+        <Receipts receipts={this.props.user && this.props.user.receipts} />
+
+
+
 
 
       </div>
@@ -25,3 +29,4 @@ class ReceiptContainer extends Component {
 
 
 export default ReceiptContainer;
+// <Review user={this.props.user && this.props.user.id} receipts={this.props.user && this.props.user.receipts} />

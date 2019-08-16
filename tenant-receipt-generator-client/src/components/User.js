@@ -1,7 +1,6 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
 import ReceiptContainer from '../containers/ReceiptContainer'
-import {connect} from 'react-redux'
+
 
 
 
@@ -15,8 +14,8 @@ const User = (props) => {
   return (
 
     <div>
-      <h2>{user ? user.name : null } </h2>
-      This is the user component
+      <h3>{user ? user.name : null } </h3>
+
       <ReceiptContainer user={user} />
 
 

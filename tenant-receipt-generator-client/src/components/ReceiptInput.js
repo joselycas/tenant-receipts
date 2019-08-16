@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {addReceipt} from '../actions/addReceipt'
 import {connect} from 'react-redux'
+import {BrowserRouter} from 'react-router-dom';
+
 
 
 class ReceiptInput extends Component {
@@ -14,16 +16,16 @@ class ReceiptInput extends Component {
         city: "",
         state: "",
         zip: "",
-        from_date: "/ /",
-        to_date: "/ /",
-        amount: 0,
+        from_date: "",
+        to_date: "",
+        amount: "$",
         notes: "",
     }
   }
-  // componentDidMount set userid to props being passed in to user
-  componentDidMount() {
-    console.log('receipt input user props', this.props.user)
-  }
+  // // componentDidMount set userid to props being passed in to user
+  // componentDidMount() {
+  //   console.log('receipt input user props', this.props.user)
+  // }
 
 
   handleOnChange = event => {
@@ -34,8 +36,9 @@ class ReceiptInput extends Component {
   }
 
   handleonSubmit = event => {
+
     event.preventDefault()
-    this.props.addReceipt(this.state, this.props.user)
+    this.props.addReceipt(this.state, this.props.user, this.props.history)
     this.setState({
       receipt:{
         name: "",
@@ -52,16 +55,11 @@ class ReceiptInput extends Component {
     })
   }
 
-// add user select box to the form value will be user_id from the user
   render() {
     return(
       <div>
-      <h2>Please enter tenant's information</h2>
+      <h3>Please enter tenant's information</h3>
       <form onSubmit={this.handleonSubmit}>
-      <label>Select Landlord </label>
-      <select name="user_id" onChange={this.handleOnChange}>
-        <option value={this.props.user_id}></option>
-      </select><br/>
         <label>Name: </label>
         <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} /><br />
         <label>Street Address: </label>

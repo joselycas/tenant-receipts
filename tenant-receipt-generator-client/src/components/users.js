@@ -6,9 +6,9 @@ import {Route, Link} from 'react-router-dom'
 const Users = (props) => {
   return (
     <div >
-    users component
+
     {props.users.map(user =>
-      <div key={user.id}><Link to={`/users/${user.id}`}>{user.name}</Link></div>)}
+      <div  key={user.id}><Link to={`/users/${user.id}`}><strong>{user.name}</strong></Link></div>)}
      </div>
   )
 }

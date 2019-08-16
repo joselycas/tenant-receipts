@@ -4,11 +4,13 @@ import Receipt from './Receipt'
 
 const Receipts = (props) => {
 
-console.log(props.receipts)
+
 
   return (
     <div>
-    <h3>I want to list the receipts for the user here. </h3>
+    <br />
+    {props.receipts && props.receipts.map(receipt =>
+      <div key={receipt.id}><Receipt receipt={receipt}/></div>)}
     </div>
 
   )

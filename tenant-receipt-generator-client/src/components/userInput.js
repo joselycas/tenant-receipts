@@ -1,10 +1,10 @@
-// user form
 import React, { Component } from 'react';
 import {addUser} from '../actions/addUser'
 import {connect} from 'react-redux'
-import User from '../components/User'
+import {BrowserRouter} from 'react-router-dom';
 
-// this is supposed to be a functional component in the component folder.
+
+
 class UserInput extends Component {
 
 state = {
@@ -22,7 +22,8 @@ handleOnChange = event => {
 
 handleonSubmit = event => {
   event.preventDefault()
-  this.props.addUser(this.state)
+  this.props.addUser(this.state, this.props.history)
+
   this.setState({
     name: '',
     street: '',

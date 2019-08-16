@@ -1,7 +1,8 @@
-export function addReceipt(data, user_id) {
+import {BrowserRouter} from 'react-router-dom';
 
+export function addReceipt(data, user) {
   return (dispatch) => {
-  fetch(`http://localhost:3000/api/v1/users/${user_id}/receipts`, {
+  fetch(`http://localhost:3000/api/v1/users/${user}/receipts`, {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'

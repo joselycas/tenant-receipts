@@ -1,5 +1,7 @@
-export function addUser(data) {
+import {BrowserRouter} from 'react-router-dom';
 
+
+export function addUser(data, history, id) {
   return (dispatch) => {
   fetch('http://localhost:3000/api/v1/users', {
     headers: {
@@ -13,7 +15,8 @@ export function addUser(data) {
   .then(user => dispatch({
     type: 'ADD_USER',
     payload: user
-  }))
-
+  }),
+ history.push(`/users/${id}`))
  }
+
 }
