@@ -5,7 +5,8 @@ import User from '../components/User'
 import {connect} from 'react-redux'
 import {fetchUsers} from '../actions/fetchUsers'
 import {Route, Switch} from 'react-router-dom'
-import Review from '../components/Review'
+// import Review from '../components/Review'
+import ReceiptInput from '../components/ReceiptInput'
 
 
 class UserContainer extends Component {
@@ -20,9 +21,9 @@ class UserContainer extends Component {
       < Switch >
           <Route path='/users/new' component={UserInput}/>
           <Route path='/users/:id' render={(routerProps) => <User {...routerProps} users={this.props.users}/>} />
-          <Route path='/users' render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
+          <Route exact path='/users' render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
           <Route exact path='/' render = {() => null} />
-          <Route path='/review' render={(routerProps) => <Review {...routerProps} users={this.props.users}/>} />
+          <Route path='/receipts/new' render={(routerProps) => <ReceiptInput {...routerProps} users={this.props.users}/>} />
       < /Switch >
 
     )
@@ -36,3 +37,6 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchUsers})(UserContainer);
+
+
+// <Route path='/review' render={(routerProps) => <Review {...routerProps} users={this.props.users}/>} />

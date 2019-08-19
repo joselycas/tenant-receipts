@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #ebebeb
+  background-color: #fff
 }
 
 .Header {
@@ -32,8 +32,4 @@
 
 a {
   color: hotpink;
-}
-
-h2 {
-  background-color: #eee
 }

@@ -13,7 +13,7 @@ class ReceiptContainer extends Component {
       <div>
 
       <ReceiptInput user={this.props.user && this.props.user.id} /><br/><br />
-        <Receipts receipts={this.props.user && this.props.user.receipts} />
+      <Receipts receipts={this.props.user && this.props.user.receipts} />
 
 
 

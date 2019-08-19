@@ -1,5 +1,5 @@
 import React from 'react'
-import {Table} from 'react-bootstrap'
+import {Table, Button} from 'react-bootstrap'
 
 
 
@@ -41,6 +41,8 @@ const Receipt = (props) => {
 
   </tbody>
 </Table>
+
+<Button variant="info" href="#">Send Receipt</Button><br /><br />
 
 
     </div>

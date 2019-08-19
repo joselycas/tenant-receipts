@@ -1,6 +1,7 @@
 import {BrowserRouter} from 'react-router-dom';
 
-export function addReceipt(data, user) {
+export function addReceipt(data, user, history) {
+  debugger;
   return (dispatch) => {
   fetch(`http://localhost:3000/api/v1/users/${user}/receipts`, {
     headers: {
@@ -11,10 +12,10 @@ export function addReceipt(data, user) {
     body: JSON.stringify(data)
   })
   .then(res => res.json())
-  .then(receipt => dispatch({
+  .then(account => dispatch({
     type: 'ADD_RECEIPT',
-    payload: receipt
-  }))
-
+    payload: account
+  })
+)
  }
 }

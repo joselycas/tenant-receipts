@@ -5,17 +5,16 @@ import {Form, Button} from 'react-bootstrap'
 
 
 const Review = (props) => {
-  console.log(props.users)
+  console.log(props.user)
+
   return (
     <div>
 
-    Displays user and receipt info <br/>
-    <User />
-
-    Send off receipt
 
     </div>
   )
 }
 
 export default Review
+// {props.user && props.user.name}
+// {props.user && props.user.receipts}

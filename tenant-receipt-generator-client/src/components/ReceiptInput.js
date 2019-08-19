@@ -23,8 +23,10 @@ class ReceiptInput extends Component {
     }
   }
   // // componentDidMount set userid to props being passed in to user
-  // componentDidMount() {
-  //   console.log('receipt input user props', this.props.user)
+
+
+  // componentDidMount(props) {
+  //   this.props.user
   // }
 
 
