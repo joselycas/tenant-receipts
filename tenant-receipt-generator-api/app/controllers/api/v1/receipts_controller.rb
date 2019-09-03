@@ -1,6 +1,6 @@
 class Api::V1::ReceiptsController < ApplicationController
 
-  # before_action :set_user
+  before_action :set_user
 
   def index
     receipts = @user.receipts
@@ -10,7 +10,7 @@ class Api::V1::ReceiptsController < ApplicationController
   def create
     receipt = @user.receipts.new(receipt_params)
     if receipt.save
-      render json: receipt
+      render json: @user
     else
       render json: {error: "Error creating receipt"}
     end
