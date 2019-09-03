@@ -12,6 +12,7 @@ class App extends Component {
   return (
     <div className="App">
     <header className="Header">Say goodbye to paper receipts.</header>
+  
 
       <NavBar /> <br />
       <Home />

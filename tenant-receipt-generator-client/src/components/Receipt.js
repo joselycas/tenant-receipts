@@ -2,17 +2,17 @@ import React from 'react'
 import {Table, Button} from 'react-bootstrap'
 
 
-
-
+const handleOnClick = () => {
+  alert("Your receipt has been sent")
+}
 const Receipt = (props) => {
-// if props.match then render receipt container component pass over props of user.id
-  return (
 
+
+  return (
     <div>
-    <Table striped bordered hover>
+    <Table  striped bordered hover>
   <thead>
     <tr>
-
       <th>Tenants Name</th>
       <th>Street</th>
       <th>Apartment</th>
@@ -27,7 +27,8 @@ const Receipt = (props) => {
   </thead>
   <tbody>
     <tr>
-      <td>{props.receipt.name}</td>
+      <td>
+      {props.receipt.name}</td>
       <td>{props.receipt.street}</td>
       <td>{props.receipt.apartment}</td>
       <td>{props.receipt.city}</td>
@@ -35,18 +36,19 @@ const Receipt = (props) => {
       <td>{props.receipt.zip}</td>
       <td>{props.receipt.from_date}</td>
       <td>{props.receipt.to_date}</td>
-      <td>{props.receipt.amount}</td>
+      <td>${props.receipt.amount}</td>
       <td>{props.receipt.notes}</td>
     </tr>
 
   </tbody>
 </Table>
 
-<Button variant="info" href="#">Send Receipt</Button><br /><br />
+<Button variant="info" href="#"  onClick={handleOnClick} >Send Receipt</Button><br /><br />
 
 
     </div>
   )
+
 }
 
 

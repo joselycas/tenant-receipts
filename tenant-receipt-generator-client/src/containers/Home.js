@@ -16,8 +16,7 @@ class Home extends Component {
 
 
       <Button variant="info" href="/users/new">Step 1. Landlord Information</Button>
-      <Button variant="info" href="/receipts/new">Step 2. Tenant Information</Button>
-      <Button variant="info" href="/review">Step 3. Revew Receipt and send</Button><br /><br />
+      <Button variant="info" href="/receipts/new">Step 2. Tenant Information, Review, and Submit!</Button><br /><br/>
       <UserContainer />
 
 

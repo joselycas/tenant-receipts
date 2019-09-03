@@ -22,12 +22,6 @@ class ReceiptInput extends Component {
         notes: "",
     }
   }
-  // // componentDidMount set userid to props being passed in to user
-
-
-  // componentDidMount(props) {
-  //   this.props.user
-  // }
 
 
   handleOnChange = event => {
@@ -60,7 +54,7 @@ class ReceiptInput extends Component {
   render() {
     return(
       <div>
-      <h3>Please enter tenant's information</h3>
+      <h3>2. Enter the tenant's information</h3>
       <form onSubmit={this.handleonSubmit}>
         <label>Name: </label>
         <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} /><br />
@@ -75,6 +69,7 @@ class ReceiptInput extends Component {
         <label>Zip-code: </label>
         <input type="integer" name="zip" value={this.state.zip} onChange={this.handleOnChange} /><br />
         <table align="center">
+        <tbody>
           <tr>
             <td>
             <label>From Date: </label>
@@ -85,17 +80,23 @@ class ReceiptInput extends Component {
             <input type="integer" name="to_date"value={this.state.to_date} onChange={this.handleOnChange} />
             </td>
           </tr>
+          </tbody>
           </table>
         <label>Amount: </label>
-        <input type="integer" name="amount" value={this.state.amount} onChange={this.handleOnChange}/><br />
+        <input type="number" name="amount" value={this.state.amount} onChange={this.handleOnChange}/><br />
         <label>Notes</label>
         <input type="text" name="notes" value={this.state.notes} onChange={this.handleOnChange} /><br />
         <input type="submit" />
 
-      </form>
+      </form><br /><br/>
       </div>
     )
   }
 }
+
+
+
+
+
 
 export default connect(null, {addReceipt})(ReceiptInput);

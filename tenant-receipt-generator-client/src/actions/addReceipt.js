@@ -1,7 +1,5 @@
-import {BrowserRouter} from 'react-router-dom';
 
 export function addReceipt(data, user, history) {
-  debugger;
   return (dispatch) => {
   fetch(`http://localhost:3000/api/v1/users/${user}/receipts`, {
     headers: {

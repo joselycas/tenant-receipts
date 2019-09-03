@@ -5,7 +5,6 @@ import User from '../components/User'
 import {connect} from 'react-redux'
 import {fetchUsers} from '../actions/fetchUsers'
 import {Route, Switch} from 'react-router-dom'
-// import Review from '../components/Review'
 import ReceiptInput from '../components/ReceiptInput'
 
 
@@ -37,6 +36,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchUsers})(UserContainer);
-
-
-// <Route path='/review' render={(routerProps) => <Review {...routerProps} users={this.props.users}/>} />

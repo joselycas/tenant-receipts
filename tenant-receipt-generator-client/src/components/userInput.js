@@ -22,7 +22,9 @@ handleOnChange = event => {
 
 handleonSubmit = event => {
   event.preventDefault()
+  console.log('A');
   this.props.addUser(this.state, this.props.history)
+  console.log('B');
 
   this.setState({
     name: '',
@@ -36,9 +38,8 @@ handleonSubmit = event => {
 
   render() {
     return(
-
       <div>
-        <h2>Landlord information</h2>
+        <h2>1. Enter the Landlord information</h2>
         <form onSubmit={this.handleonSubmit}>
           <label>Name: </label>
           <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} /><br />
@@ -52,10 +53,7 @@ handleonSubmit = event => {
           <input type="text" name="zip" value={this.state.zip} onChange={this.handleOnChange} /><br />
           <input type="submit" />
         </form>
-        <div>
-
-
-        </div>
+        <br /><br />
       </div>
 
 
