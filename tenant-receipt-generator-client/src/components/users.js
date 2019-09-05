@@ -52,19 +52,25 @@ class Users extends React.Component {
     })
     }
 
+
   render() {
+
     console.log("button", this.state.buttonClicked)
-    console.log("users", this.state.usersList)
+    console.log("users state", this.state.usersList)
+    console.log("users props", this.props.users)
     return (
       <div >
+        <button onClick={this.sortUsers}>Sort</button>
 
-      <button onClick={this.sortUsers}>Sort</button>
-      {this.props.users.map(user =>
-      
-      <div  key={user.id}><Link to={`/users/${user.id}`}>
+        {this.state.usersList.map(user =>
+        <div  key={user.id}><Link to={`/users/${user.id}`}>
+        <strong>{user.name}</strong></Link> - <button onClick={() => this.handleOnCLick(user.id)}>vote</button>
+        {this.state.votes[user.id]}</div>)}
 
-      <strong>{user.name}</strong></Link> - <button onClick={() => this.handleOnCLick(user.id)}>vote</button>
-      {this.state.votes[user.id]}</div>)}
+        {this.props.users.map(user =>
+        <div  key={user.id}><Link to={`/users/${user.id}`}>
+        <strong>{user.name}</strong></Link> - <button onClick={() => this.handleOnCLick(user.id)}>vote</button>
+        {this.state.votes[user.id]}</div>)}
      </div>
   )
   }
