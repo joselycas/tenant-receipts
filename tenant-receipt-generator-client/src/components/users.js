@@ -48,7 +48,7 @@ class Users extends React.Component {
     });
     this.setState({
       usersList:sortedUsers,
-      buttonClicked:true
+      buttonClicked:!this.state.buttonClicked
     })
     }
 
@@ -61,13 +61,10 @@ class Users extends React.Component {
     return (
       <div >
         <button onClick={this.sortUsers}>Sort</button>
-
-        {this.state.usersList.map(user =>
+        {this.state.buttonClicked ? this.state.usersList.map(user =>
         <div  key={user.id}><Link to={`/users/${user.id}`}>
         <strong>{user.name}</strong></Link> - <button onClick={() => this.handleOnCLick(user.id)}>vote</button>
-        {this.state.votes[user.id]}</div>)}
-
-        {this.props.users.map(user =>
+        {this.state.votes[user.id]}</div>) : this.props.users.map(user =>
         <div  key={user.id}><Link to={`/users/${user.id}`}>
         <strong>{user.name}</strong></Link> - <button onClick={() => this.handleOnCLick(user.id)}>vote</button>
         {this.state.votes[user.id]}</div>)}
