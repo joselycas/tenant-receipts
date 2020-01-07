@@ -28,11 +28,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-// <ul>
-//   <li><Link to="/">Home</Link></li>
-//   <li><Link to="/users/:id/receipts/new">New Receipt</Link></li>
-//   <li><Link to="/users/:id/receipts">Receipt History</Link></li>
-//   <li><Link to="/users">Users</Link></li>
-//   <li><Link to='/users/:id'>User</Link></li>
-// </ul>
