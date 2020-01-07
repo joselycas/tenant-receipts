@@ -23,7 +23,7 @@ class UserContainer extends Component {
           <Route exact path='/users' render={(routerProps) => <Users {...routerProps} users={this.props.users}/>}/>
           <Route exact path='/' render = {() => null} />
           <Route path='/receipts/new' render={(routerProps) => <ReceiptInput {...routerProps} users={this.props.users}/>} />
-      < /Switch >
+      </ Switch>
 
     )
   }
@@ -35,4 +35,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchUsers})(UserContainer);
+export default connect(mapStateToProps, {fetchUsers})(UserContainer)
