@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {addReceipt} from '../actions/addReceipt'
-import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom';
+import {TextField} from '@material-ui/core';
 
 
 class ReceiptInput extends Component {
@@ -51,15 +51,7 @@ class ReceiptInput extends Component {
 
   render() {
     return(
-      <Button variant="contained" color="primary">
-      Hello World
-    </Button>
-    )
-  }
-}
-
-export default connect(null, {addReceipt})(ReceiptInput);
-{/* <div>
+      <div>
       <h3>2. Enter the tenant's information</h3>
       <form onSubmit={this.handleonSubmit}>
         <label>Name: </label>
@@ -78,12 +70,34 @@ export default connect(null, {addReceipt})(ReceiptInput);
         <tbody>
           <tr>
             <td>
-            <label>From Date: </label>
-            <input type="integer" name="from_date" value={this.state.from_date} onChange={this.handleOnChange}/>
+            <form noValidate>
+              <TextField
+                  id="date"
+                  label="Rent Start Date"
+                  type="date"
+                  name="from_date"
+                  value={this.state.from_date}
+                  onChange={this.handleOnChange}
+                  InputLabelProps={{
+                  shrink: true,
+                  }}
+              />
+            </form>
             </td>
             <td>
-            <label>End Date: </label>
-            <input type="integer" name="to_date"value={this.state.to_date} onChange={this.handleOnChange} />
+            <form  noValidate>
+              <TextField
+                  id="date"
+                  label="Rent End Date"
+                  type="date"
+                  name="to_date"
+                  value={this.state.to_date}
+                  onChange={this.handleOnChange}
+                  InputLabelProps={{
+                  shrink: true,
+                  }}
+              />
+            </form>
             </td>
           </tr>
           </tbody>
@@ -95,4 +109,9 @@ export default connect(null, {addReceipt})(ReceiptInput);
         <input type="submit" />
 
       </form><br /><br/>
-      </div> */}
+      </div> 
+    )
+  }
+}
+
+export default connect(null, {addReceipt})(ReceiptInput);
