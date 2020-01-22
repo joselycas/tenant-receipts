@@ -1,23 +1,28 @@
 import React from 'react'
-// import {Link} from 'react-router-dom'
-import {Navbar, Nav} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+// import {Navbar, Nav} from 'react-bootstrap'
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 const NavBar = () => {
+  
   return(
-    <div>
-    <>
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/">RENT RECEIPT GENERATOR</Navbar.Brand>
-        <Nav className="tentant-receipt">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/users">Users</Nav.Link>
-        </Nav>
-
-      </Navbar>
-
-
-    </>
-    </div>
+    <Paper>
+      <Tabs
+        indicatorColor="primary"
+        textColor="primary"
+        centered
+      >
+        <Tab label="HOME" 
+          component={Link}
+          to="/" />
+        <Tab label="USERS" 
+          component={Link}
+          to="/users" />
+      </Tabs>
+    </Paper>
   )
 }
 
