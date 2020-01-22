@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import {addUser} from '../actions/addUser';
 import {connect} from 'react-redux';
 
@@ -20,10 +21,7 @@ handleOnChange = event => {
 
 handleonSubmit = event => {
   event.preventDefault()
-  console.log('A');
   this.props.addUser(this.state, this.props.history)
-  console.log('B');
-
   this.setState({
     name: '',
     street: '',
@@ -53,9 +51,6 @@ handleonSubmit = event => {
         </form>
         <br /><br />
       </div>
-
-
-
     )
   }
 }
