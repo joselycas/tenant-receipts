@@ -3,8 +3,6 @@ import {addReceipt} from '../actions/addReceipt'
 import {connect} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom';
 
-
-
 class ReceiptInput extends Component {
 
   constructor() {
@@ -23,7 +21,6 @@ class ReceiptInput extends Component {
     }
   }
 
-
   handleOnChange = event => {
     const {name, value} = event.target
     this.setState({
@@ -32,7 +29,6 @@ class ReceiptInput extends Component {
   }
 
   handleonSubmit = event => {
-
     event.preventDefault()
     this.props.addReceipt(this.state, this.props.user, this.props.history)
     this.setState({
@@ -93,10 +89,5 @@ class ReceiptInput extends Component {
     )
   }
 }
-
-
-
-
-
 
 export default connect(null, {addReceipt})(ReceiptInput);
