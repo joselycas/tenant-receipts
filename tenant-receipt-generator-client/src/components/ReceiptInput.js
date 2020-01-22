@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {addReceipt} from '../actions/addReceipt'
 import {connect} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom';
+import {TextField} from '@material-ui/core';
+
 
 class ReceiptInput extends Component {
 
@@ -68,12 +70,34 @@ class ReceiptInput extends Component {
         <tbody>
           <tr>
             <td>
-            <label>From Date: </label>
-            <input type="integer" name="from_date" value={this.state.from_date} onChange={this.handleOnChange}/>
+            <form noValidate>
+              <TextField
+                  id="date"
+                  label="Rent Start Date"
+                  type="date"
+                  name="from_date"
+                  value={this.state.from_date}
+                  onChange={this.handleOnChange}
+                  InputLabelProps={{
+                  shrink: true,
+                  }}
+              />
+            </form>
             </td>
             <td>
-            <label>End Date: </label>
-            <input type="integer" name="to_date"value={this.state.to_date} onChange={this.handleOnChange} />
+            <form  noValidate>
+              <TextField
+                  id="date"
+                  label="Rent End Date"
+                  type="date"
+                  name="to_date"
+                  value={this.state.to_date}
+                  onChange={this.handleOnChange}
+                  InputLabelProps={{
+                  shrink: true,
+                  }}
+              />
+            </form>
             </td>
           </tr>
           </tbody>
@@ -85,7 +109,7 @@ class ReceiptInput extends Component {
         <input type="submit" />
 
       </form><br /><br/>
-      </div>
+      </div> 
     )
   }
 }
