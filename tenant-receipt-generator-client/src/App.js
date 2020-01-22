@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './containers/Home.js';
 import NavBar from './components/NavBar'
+import 'typeface-roboto';
 
 
 
