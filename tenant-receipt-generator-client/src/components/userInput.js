@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import {addUser} from '../actions/addUser'
-import {connect} from 'react-redux'
-import {BrowserRouter} from 'react-router-dom';
-
+import {addUser} from '../actions/addUser';
+import {connect} from 'react-redux';
 
 
 class UserInput extends Component {
