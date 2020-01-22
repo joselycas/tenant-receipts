@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {addReceipt} from '../actions/addReceipt'
+import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom';
+
 
 class ReceiptInput extends Component {
 
@@ -49,7 +51,15 @@ class ReceiptInput extends Component {
 
   render() {
     return(
-      <div>
+      <Button variant="contained" color="primary">
+      Hello World
+    </Button>
+    )
+  }
+}
+
+export default connect(null, {addReceipt})(ReceiptInput);
+{/* <div>
       <h3>2. Enter the tenant's information</h3>
       <form onSubmit={this.handleonSubmit}>
         <label>Name: </label>
@@ -85,9 +95,4 @@ class ReceiptInput extends Component {
         <input type="submit" />
 
       </form><br /><br/>
-      </div>
-    )
-  }
-}
-
-export default connect(null, {addReceipt})(ReceiptInput);
+      </div> */}
