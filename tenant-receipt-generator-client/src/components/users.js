@@ -20,44 +20,36 @@ class Users extends React.Component {
         let newVotes = 1
         if (this.state.votes[userId]){
           newVotes = this.state.votes[userId] + 1
-        }
+        }   
         return {votes:{
           ...this.state.votes,
           [userId]:newVotes
         }
-
        }
-
-    });
-
+      });
     }
 
     sortUsers = () => {
-    let originalProps = [...this.props.users]
-    let sortedUsers = originalProps.sort((a, b) => {
-
-      var nameA = a.name.toUpperCase();
-      var nameB = b.name.toUpperCase();
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-      return 0;
-    });
-    this.setState({
-      usersList:sortedUsers,
-      buttonClicked:!this.state.buttonClicked
-    })
+      let originalProps = [...this.props.users]
+      let sortedUsers = originalProps.sort((a, b) => {
+        var nameA = a.name.toUpperCase();
+        var nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
+      this.setState({
+        usersList:sortedUsers,
+        buttonClicked:!this.state.buttonClicked
+      })
     }
 
 
   render() {
-
-    console.log("button", this.state.buttonClicked)
-    console.log("users state", this.state.usersList)
-    console.log("users props", this.props.users)
     return (
       <div >
         <button onClick={this.sortUsers}>Sort</button>
@@ -69,7 +61,7 @@ class Users extends React.Component {
         <strong>{user.name}</strong></Link> - <button onClick={() => this.handleOnCLick(user.id)}>vote</button>
         {this.state.votes[user.id]}</div>)}
      </div>
-  )
+    )
   }
 }
 
