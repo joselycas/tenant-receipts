@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_151508) do
+ActiveRecord::Schema.define(version: 2020_01_29_022143) do
 
   create_table "receipts", force: :cascade do |t|
     t.string "name"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2019_08_08_151508) do
     t.string "city"
     t.string "state"
     t.string "zip"
-    t.integer "from_date"
-    t.integer "to_date"
+    t.string "from_date"
+    t.string "to_date"
     t.float "amount"
     t.string "notes"
     t.datetime "created_at", null: false
