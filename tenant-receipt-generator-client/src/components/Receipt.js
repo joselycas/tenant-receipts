@@ -7,7 +7,6 @@ const handleOnClick = () => {
 }
 const Receipt = (props) => {
 
-
   return (
     <div>
     <Table  striped bordered hover>

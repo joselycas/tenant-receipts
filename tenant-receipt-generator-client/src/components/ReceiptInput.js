@@ -50,6 +50,7 @@ class ReceiptInput extends Component {
   }
 
   render() {
+    console.log(this.state.from_date)
     return(
       <div>
       <h3>2. Enter the tenant's information</h3>
@@ -70,7 +71,7 @@ class ReceiptInput extends Component {
         <tbody>
           <tr>
             <td>
-            <form noValidate>
+            <form>
               <TextField
                   id="date"
                   label="Rent Start Date"
@@ -85,7 +86,7 @@ class ReceiptInput extends Component {
             </form>
             </td>
             <td>
-            <form  noValidate>
+            <form>
               <TextField
                   id="date"
                   label="Rent End Date"
