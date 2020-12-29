@@ -1,7 +1,8 @@
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 
 export function addUser(data, history) {
+  debugger;
   return (dispatch) => {
   fetch('http://localhost:3000/api/v1/users', {
     headers: {
